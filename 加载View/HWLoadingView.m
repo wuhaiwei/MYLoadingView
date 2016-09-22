@@ -47,6 +47,8 @@ static NSString *const kButtonTitleHexColor = @"ff6600";
     loadingView.bounds = CGRectMake(0, 0, kScreenWidth - 8 * kOffset, height);
     [view addSubview:loadingView];
     loadingView.backgroundColor = [UIColor whiteColor];
+    
+    [loadingView startAnimation];
     return loadingView;
 }
 
@@ -82,6 +84,7 @@ static NSString *const kButtonTitleHexColor = @"ff6600";
     [self addSubview:self.imageView];
     [self addSubview:self.descriptionLabel];
     [self addSubview:self.cancelButton];
+    
     return self;
 }
 
@@ -145,6 +148,19 @@ static NSString *const kButtonTitleHexColor = @"ff6600";
 }
 
 #pragma mark - private
+
+- (void)startAnimation{
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+    rotationAnimation.duration = 1.0;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = HUGE_VALF;
+    
+    [_imageView.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+}
+
+
 //获取当前屏幕显示的viewcontroller
 + (UIViewController *)getCurrentShowViewController
 {
