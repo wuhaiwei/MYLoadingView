@@ -61,6 +61,15 @@ static NSString *const kButtonTitleHexColor = @"ff6600";
     }
 }
 
++ (void)hideHWLoadingView
+{
+    UIViewController *viewController = [self getCurrentShowViewController];
+    if (viewController) {
+        [self hideHWLoadingViewForView:viewController.view animated:YES];
+    }
+}
+
+
 #pragma mark - init
 - (instancetype)init
 {
@@ -128,8 +137,39 @@ static NSString *const kButtonTitleHexColor = @"ff6600";
 #pragma mark - 按钮点击事件
 - (void)cancelClick:(UIButton *)button
 {
+    [HWLoadingView hideHWLoadingView];
+    
     if ([_delegate respondsToSelector:@selector(hwLoadingViewDidClickCancelButton:)]) {
         [_delegate hwLoadingViewDidClickCancelButton:button];
     }
+}
+
+#pragma mark - private
+//获取当前屏幕显示的viewcontroller
++ (UIViewController *)getCurrentShowViewController
+{
+    UIViewController *result = nil;
+    
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    
+    if ([nextResponder isKindOfClass:[UIViewController class]])
+        result = nextResponder;
+    else
+        result = window.rootViewController;
+    return result;
 }
 @end

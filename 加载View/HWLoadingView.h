@@ -38,4 +38,9 @@
 + (void)hideHWLoadingViewForView:(UIView *)view
                       animated:(BOOL)animated;
 
+/**
+ *  移除加载view
+ */
++ (void)hideHWLoadingView;
+
 @end
