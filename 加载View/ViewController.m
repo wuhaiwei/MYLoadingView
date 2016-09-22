@@ -7,21 +7,26 @@
 //
 
 #import "ViewController.h"
+#import "HWLoadingView.h"
 
-@interface ViewController ()
+@interface ViewController () <HWLoadingViewDelegate>
 
 @end
 
 @implementation ViewController
 
+#pragma mark - lifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
+    HWLoadingView *loadingView = [HWLoadingView showHWLoadingViewAddedTo:self.view animated:YES];
+    loadingView.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
+#pragma mark - HWLoadingViewDelegate
+- (void)hwLoadingViewDidClickCancelButton:(UIButton *)button
+{
+    
+}
 @end

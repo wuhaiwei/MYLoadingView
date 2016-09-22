@@ -13,6 +13,8 @@
 		FD1A332A1D90D8190031399E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A33281D90D8190031399E /* Main.storyboard */; };
 		FD1A332C1D90D8190031399E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1A332B1D90D8190031399E /* Assets.xcassets */; };
 		FD1A332F1D90D8190031399E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A332D1D90D8190031399E /* LaunchScreen.storyboard */; };
+		FDA13E8C1D937ABE002AAB64 /* HWLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA13E8B1D937ABE002AAB64 /* HWLoadingView.m */; };
+		FDA13E8F1D938B80002AAB64 /* UIColor+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA13E8E1D938B80002AAB64 /* UIColor+extend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		FD1A332B1D90D8190031399E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD1A332E1D90D8190031399E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD1A33301D90D8190031399E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDA13E8A1D937ABE002AAB64 /* HWLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWLoadingView.h; sourceTree = "<group>"; };
+		FDA13E8B1D937ABE002AAB64 /* HWLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWLoadingView.m; sourceTree = "<group>"; };
+		FDA13E8D1D938B80002AAB64 /* UIColor+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+extend.h"; sourceTree = "<group>"; };
+		FDA13E8E1D938B80002AAB64 /* UIColor+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+extend.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 				FD1A33231D90D8190031399E /* AppDelegate.m */,
 				FD1A33251D90D8190031399E /* ViewController.h */,
 				FD1A33261D90D8190031399E /* ViewController.m */,
+				FDA13E8A1D937ABE002AAB64 /* HWLoadingView.h */,
+				FDA13E8B1D937ABE002AAB64 /* HWLoadingView.m */,
+				FDA13E8D1D938B80002AAB64 /* UIColor+extend.h */,
+				FDA13E8E1D938B80002AAB64 /* UIColor+extend.m */,
 				FD1A33281D90D8190031399E /* Main.storyboard */,
 				FD1A332B1D90D8190031399E /* Assets.xcassets */,
 				FD1A332D1D90D8190031399E /* LaunchScreen.storyboard */,
@@ -151,7 +161,9 @@
 			files = (
 				FD1A33271D90D8190031399E /* ViewController.m in Sources */,
 				FD1A33241D90D8190031399E /* AppDelegate.m in Sources */,
+				FDA13E8C1D937ABE002AAB64 /* HWLoadingView.m in Sources */,
 				FD1A33211D90D8190031399E /* main.m in Sources */,
+				FDA13E8F1D938B80002AAB64 /* UIColor+extend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +312,7 @@
 				FD1A33351D90D8190031399E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
